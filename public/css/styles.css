@@ -1,6 +1,161 @@
 /******* Change Box Model ***************/
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&family=Montserrat:ital,wght@0,800;1,800&display=swap');
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+p, a, li {
+  font-family: "Jost", sans-serif;
+}
+
+h1, h2, h3, h4, .siteName a {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+.siteName a {
+  font-size: 1.8em;
+}
+
+.siteName a, #tools a{
+  text-decoration: none;
+}
+
+.siteName a:visited {
+  color:black;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  display: inline;
+  font-weight: bold;
+  padding: 5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+  background-color: #8EA8C3;
+}
+
+#wrapper {
+  background-color: white;
+}
+
+picture img  {
+  display: block;
+  max-width: 80vw;
+  margin: auto;
+  background-size: cover;
+}
+
+#own {
+  max-width: 100px;
+}
+
+#delorean {
+  position: relative;
+}
+
+#rectangle {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: 0;
+  padding: 10px;
+}
+
+#rectangle p {
+  line-height: 1.2;
+}
+
+#dmc {
+  margin-top: 50px;
+}
+
+#box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-img {
+  padding: 5px;
+  text-align: center;
+}
+
+.pic {
+  width: 45vw;
+  height: 80px;
+  background-color: #8EA8C3;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pic img {
+  margin-bottom: 0px;
+  max-height: 70px;
+  width: auto;
+  
+}
+
+
+@media screen and (min-width: 992px) {
+  
+  body {
+    background-image: url("/images/site/checkerboard.jpg");
+  }
+
+  #wrapper {
+    border: 8px solid #8EA8C3;
+    border-radius: 10px;
+    max-width: 80vw;
+    margin: auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  picture img {
+    max-width: 100%;
+  }
+
+  #parte2 {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;   
+  }
+
+  #upgrade {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #dmc {
+    margin-top: 0;
+    grid-column: 2/3;
+  }
+
+  .pic {
+    max-width: 15vw;
+    margin: 5px;
+  }
+
+  footer {
+    margin-top: 30px;
+  }
 }
