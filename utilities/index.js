@@ -57,6 +57,32 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
+/* **************************************
+* Build the details view HTML
+* ************************************ */
+Util.buildDetailsBlock = async function(data){
+  let block
+  if(data){
+    block = '<section id="schedaAuto">' 
+    block += '<img id="fotoAuto" src="' + data[0].inv_image 
+    +'" alt="Image of '+ data[0].inv_make + ' ' + data[0].inv_model 
+    +' on CSE Motors" />'
+    block +=  `<h2 id="carName">${data[0].inv_make} ${data[0].inv_model}</h2>`
+    block += `<p id="descrizione">${data[0].inv_description}</p>`
+    block += `<p id="carPrice">${new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(data[0].inv_price)}</p>`
+    block += `<p id="distanza">${new Intl.NumberFormat("en-US").format(data[0].inv_miles)} miles</p>`
+    block += '</section>'
+  } else { 
+    block += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+  }
+  return block
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

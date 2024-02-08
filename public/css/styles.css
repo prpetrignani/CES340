@@ -111,6 +111,62 @@ picture img  {
   
 }
 
+#inv-display {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#inv-display li{
+  margin: auto;
+  display: block;
+  text-align: center;
+  width: 280px;
+  max-height: 500px;
+  border: 3px solid #8EA8C3;
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px #888888;
+  padding: 15px;
+  margin: 15px;
+}
+
+.namePrice hr {
+  display: none;
+}
+
+.namePrice h2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.namePrice h2 a:hover {
+  color: #8EA8C3;
+}
+
+.namePrice h2 a:visited {
+  color: rgb(67, 67, 67);
+}
+
+#fotoAuto {
+ max-width: 90vw;
+ display: block;
+ margin: auto;
+}
+
+#carPrice {
+  font-size: 2em;
+  background-color: #8EA8C3;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#carName {
+  color:#8EA8C3;
+  font-size: 2em;
+  text-align: center;
+}
 
 @media screen and (min-width: 992px) {
   
@@ -158,4 +214,40 @@ picture img  {
   footer {
     margin-top: 30px;
   }
+
+  #schedaAuto  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    column-gap: 15px;
+  }
+
+  #fotoAuto {
+    grid-column: 1/2;
+    grid-row: 1/5;
+   }
+
+  #carName {
+    grid-column: 2/3;
+    grid-template-rows: 1/2;
+    text-align: left;
+  }
+
+  #descrizione {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  #carPrice {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #distanza {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+
 }
