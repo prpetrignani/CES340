@@ -1,0 +1,37 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<% messages() %>
+
+<% if (errors) { %>
+    <ul id="logError">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+<% } %>
+
+<section>
+    <form class="form" action="/account/login">
+        <fieldset>
+            <legend>
+                Please, insert your information
+            </legend>
+            <label class="dati">Email
+                <input type="email" name="account_email" id="account_email" placeholder="sonso@email.com" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" value="<%= locals.account_email %>">
+            </label>
+            <label class="dati">Password
+                <input type="password" name="account_password" id="account_password" required>
+            </label>
+        </fieldset>
+
+        <button id="bottone" type="submit">
+            Log In
+        </button>
+    </form>
+    <p id="register-account">No account? <a href="/account/register">Sign-up</a></p>
+
+</section>

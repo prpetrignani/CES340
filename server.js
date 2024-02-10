@@ -14,7 +14,8 @@ const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
-/*const accountRoute = require("/routes/accountRoute")
+const accountRoute = require("./routes/accountRoute")
+const bodyParser = require("body-parser")
 
 /* includi il file index preso dalla cartella utilities
 per far funzionare l'Express Error Handler */
@@ -41,6 +42,9 @@ app.use(function(req, res, next){
   next()
 })
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -54,8 +58,13 @@ app.set("layout", "./layouts/layout") // not at views root
 app.use(static)
 //Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
+
 // Inventory routes
 app.use("/inv", inventoryRoute)
+
+//accounts route
+app.use("/account", accountRoute)
+
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
   next({status: 404, message: "It wasn't me!! Sorry, we appear to have lost that page."})

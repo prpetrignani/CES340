@@ -1,0 +1,42 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<% messages() %>
+
+<% if (errors) { %>
+    <ul id="regError">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+<% } %>
+
+<section>
+    <form class="form" action="/account/register" method="post">
+        <fieldset>
+            <legend>
+                Fill the form to create your own account.
+            </legend>
+            <label class="dati">First Name
+                <input type="text" name="account_firstname" required size="10" value="<%= locals.account_firstname %>">
+            </label>
+            <label class="dati">Last Name 
+                <input type="text" name="account_lastname" required value="<%= locals.account_lastname %>">
+            </label>
+            <label class="dati">Email
+                <input type="email" name="account_email" placeholder="sonso@email.com" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" value="<%= locals.account_email %>">
+            </label>
+            <label class="dati">Password
+                <input type="password" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+            </label>
+            <p>
+                Passwords must be minimum of 12 characters, including 1 capital letter, 1 number and at least a special symbol.
+            </p>
+        </fieldset>
+        <button type="submit" id="register-btn">Register</button>
+    </form>
+
+</section>

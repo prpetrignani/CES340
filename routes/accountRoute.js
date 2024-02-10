@@ -1,14 +1,16 @@
-/* Needed Resources 
+/* Needed Resources*/ 
 const express = require("express")
 const router = new express.Router() 
-const invController = require("../controllers/invController")
+const accountController = require("../controllers/accountController")
 const utilities = require("../utilities")
 
-// Route to build inventory by classification view
-router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
+// Route for the path that will be sent when the "My Account" link is clicked - login view
+router.get("/login", utilities.handleErrors(accountController.buildLogin));
 
-// Route to build pagine con i dettagli di ogni auto
-router.get("/detail/:inventoryId", utilities.handleErrors(invController.builDetailsById));
+//Login view 
+router.get("/register", utilities.handleErrors(accountController.buildRegister));
+
+//Enable the Registration Route
+router.post('/register', utilities.handleErrors(accountController.registerAccount))
 
 module.exports = router;
-*/
