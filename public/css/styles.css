@@ -11,7 +11,7 @@ p, a, li, label.dati {
   font-family: "Jost", sans-serif;
 }
 
-h1, h2, h3, h4, .siteName a, legend {
+h1, h2, h3, h4, .siteName a, legend, .bottone {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -204,6 +204,24 @@ form label.dati input, form label.dati select, textarea {
   background-color: #F7F7FF;
 }
 
+/*Bottone*/
+.bottone {
+  display: block;
+  margin: auto;
+  background-color: #8EA8C3;
+  font-size: 0.9rem;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+}
+
+.bottone:hover {
+  background-color: white;
+  border: 3px solid #8EA8C3;
+  color: black;
+}
 
 @media screen and (min-width: 992px) {
   

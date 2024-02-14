@@ -1,0 +1,25 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+<% }else {
+      res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+<% } %>
+
+<div id="aggiungiCategoria">
+    <p class="notaBene">Classification name cannot have spaces or special character of any kind</p>
+    <form class="form" action="/inv/add-classification" method="post">
+        <label class="dati">Insert the new classification name:
+            <input name="classification_name" type="text" pattern="^[a-zA-Z]+$" required value="<%= locals.classification_name %>">
+        </label>
+        <button type="submit" class="bottone">submit</button>
+    </form>
+</div>
