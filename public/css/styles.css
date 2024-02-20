@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-p, a, li, label.dati {
+p, a, li, label.dati, #classificationList {
   font-family: "Jost", sans-serif;
 }
 
@@ -221,6 +221,33 @@ form label.dati input, form label.dati select, textarea {
   background-color: white;
   border: 3px solid #8EA8C3;
   color: black;
+}
+
+#management {
+  display: flex;
+}
+
+#management a {
+  text-decoration: none;
+  margin: 25px;
+  text-shadow: 1px 1px 3px #888888;
+  color: #840000;
+}
+ 
+#management a:visited {
+  color: #840000;
+}
+
+#classificationList {
+  padding: 5px;
+  font-size: 0,9rem;
+  font-weight: bold;
+}
+
+.success li {
+  list-style-type: none;
+  color: #01bb01;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 992px) {

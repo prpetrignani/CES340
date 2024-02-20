@@ -16,8 +16,8 @@
 
 <div id="aggiungiElemento">
     <form id="inv-form" class="form-card" action="/inv/add-inventory" method="post">
-        <label for="classificationList">Classification:</label>
-        <%-classDropdown %>
+        <label class="dati" for="classificationList">Classification:</label>
+        <%-DropdownList %>
 
         <label for="inv_make" class="dati">Make
             <input name="inv_make" type="text" minlength="3" value="<%= locals.inv_make %>" placeholder="Min of 3 characters" required>

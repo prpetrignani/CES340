@@ -83,6 +83,24 @@ Util.buildDetailsBlock = async function(data){
   return block
 }
 
+/* *******************************************************
+ * Costruzione menù a scompara per aggiungere 
+ ******************************************************* */
+Util.buildDropdown = async function(classification_id) {
+  let data = await invModel.getClassifications();
+  let list = '<select id="classificationList" name="classification_id" required>'
+  list += '<option value="">Choose a classification</option>'
+  data.rows.forEach((row) => {
+    list += `<option value="${row.classification_id}"`
+    if (row.classification_id == classification_id) {
+      list += " selected"
+    }
+    list += `>${row.classification_name}</option>`
+  })
+  list += "</select>"
+  return list
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
