@@ -5,6 +5,7 @@
 /* ***********************
  * Require Statements
  *************************/
+const cookieParser = require("cookie-parser")
 const session = require("express-session")
 const pool = require('./database/')
 const express = require("express")
@@ -19,7 +20,7 @@ const bodyParser = require("body-parser")
 
 /* includi il file index preso dalla cartella utilities
 per far funzionare l'Express Error Handler */
-const utilities = require('./utilities/index')
+const utilities = require('./utilities/')
 
 /* ***********************
  * Middleware
@@ -44,6 +45,8 @@ app.use(function(req, res, next){
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
 
 /* ***********************
  * View Engine and Templates

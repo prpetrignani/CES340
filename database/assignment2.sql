@@ -259,3 +259,13 @@ ON inv_model = classification_name;
 UPDATE public.inventory
 SET inv_image = REPLACE (inv_image, '/images/', '/images/vehicles/'),
 inv_thumbnail = REPLACE (inv_thumbnail, '/images/', '/images/vehicles/');
+
+UPDATE account
+SET account_type = 'Admin'
+WHERE account_firstname = 'Manager';
+
+DELETE FROM classification
+WHERE classification_id = 6;
+
+DELETE FROM classification
+WHERE classification_id = 7;

@@ -23,4 +23,10 @@ router.get("/add-classification", utilities.handleErrors(invController.buildAddC
 // Process add classificaiton
 router.post("/add-classification", validator.classificationRules(), validator.checkClassificationData, utilities.handleErrors(invController.addNewClassification));
 
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON));
+
+router.get("/invController", utilities.handleErrors(invController.editInventoryView))
+
+router.post("/update/", validator.newInventoryRules(), utilities.handleErrors(invController.updateInventory))
+
 module.exports = router;

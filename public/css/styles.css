@@ -7,11 +7,11 @@
   box-sizing: border-box;
 }
 
-p, a, li, label.dati, #classificationList {
+p, a, li, label.dati, #classificationList, #inventoryDisplay td {
   font-family: "Jost", sans-serif;
 }
 
-h1, h2, h3, h4, .siteName a, legend, .bottone {
+h1, h2, h3, h4, .siteName a, legend, .bottone, #inventoryDisplay th {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -240,7 +240,7 @@ form label.dati input, form label.dati select, textarea {
 
 #classificationList {
   padding: 5px;
-  font-size: 0,9rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -248,6 +248,15 @@ form label.dati input, form label.dati select, textarea {
   list-style-type: none;
   color: #01bb01;
   font-weight: bold;
+}
+
+#inventoryDisplay th {
+  padding: 10px;
+}
+
+#inventoryDisplay a {
+  text-decoration: none;
+  margin-left: 12px;
 }
 
 @media screen and (min-width: 992px) {
